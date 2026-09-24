@@ -1,27 +1,39 @@
-# Entorno virtual
-.venv/
-venv/
-env/
-
-# Python
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Gradio
-.gradio/
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
 
-# Variables de entorno
-.env
-.env.*
-!.env.example
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
 
-# VS Code
+# Test / coverage output
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE / editor files
 .vscode/
+.idea/
+*.swp
+*.swo
 
-# Jupyter
-.ipynb_checkpoints/
-
-# Sistema operativo
+# OS files
 .DS_Store
 Thumbs.db
+
+# Local env files
+.env
+.env.*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
