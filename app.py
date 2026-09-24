@@ -10,4 +10,4 @@ demo = gr.Interface(
     api_name="predict"
 )
 
-demo.launch(share=True)
+demo.launch()
