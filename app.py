@@ -1,4 +1,5 @@
 import gradio as gr
+import os
 
 def greet(name, intensity):
     return "Hello, " + name + "!" * int(intensity)
@@ -10,4 +11,6 @@ demo = gr.Interface(
     api_name="predict"
 )
 
-demo.launch(share=True)
+demo.launch(server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+           )
