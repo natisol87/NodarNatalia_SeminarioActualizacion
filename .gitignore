@@ -1,7 +1,9 @@
-# Python bytecode
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
+*.pyd
+*.pyc
 
 # Virtual environments
 .venv/
@@ -9,31 +11,36 @@ venv/
 env/
 ENV/
 
-# Distribution / packaging
+# Project local app data
+.gradio/
+.gradio_cache/
+
+# Test / coverage / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Distribution / build artifacts
 build/
 dist/
 *.egg-info/
 .eggs/
 
-# Test / coverage output
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
+# Jupyter
+.ipynb_checkpoints/
 
-# IDE / editor files
+# Editor / OS
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db
 *.swp
 *.swo
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# Local env files
+# Secrets / local configuration
 .env
 .env.*
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+.env.local
