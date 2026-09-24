@@ -1,4 +1,5 @@
 import gradio as gr
+import os
 
 def greet(name, intensity):
     return "Hello, " + name + "!" * int(intensity)
