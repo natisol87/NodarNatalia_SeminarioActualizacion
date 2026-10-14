@@ -1,0 +1,9 @@
+,lightonai/LightOnOCR-2-1B,Qwen/Qwen3-VL-4B-Instruct
+cómo corrió,pipeline,pipeline
+parámetros (miles de millones),1.01,4.44
+pesos en memoria (GB),2.01,8.88
+carga (s),4.3,14.5
+seg. promedio por imagen,104.98,139.87
+puntaje promedio,0.959,1.0
+aciertos (sí),7 / 8,8 / 8
+aciertos en casos difíciles,4 / 5,5 / 5

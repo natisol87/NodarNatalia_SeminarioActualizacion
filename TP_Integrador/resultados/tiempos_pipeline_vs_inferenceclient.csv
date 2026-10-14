@@ -1,0 +1,9 @@
+imagen,pipeline (s),InferenceClient (s),similitud entre las dos respuestas
+Impreso: tapa de manual,63.54,4.72,0.933
+Impreso en perspectiva,93.73,5.24,0.29
+Impreso muy inclinado,241.55,10.49,0.135
+"Inglés, baja resolución",81.54,4.34,0.083
+Manuscrito prolijo (tabla),112.51,7.93,0.998
+Manuscrito apurado (cursiva),57.25,4.58,0.453
+Manuscrito: página completa,108.75,6.8,0.875
+Ticket de supermercado,87.2,4.08,0.855
