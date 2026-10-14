@@ -1,0 +1,14 @@
+# Secretos: el token de Hugging Face NUNCA se sube al repo
+.env
+
+# Documentos de Word (el informe se entrega por el aula virtual) y sus temporales
+*.docx
+~$*
+.~lock.*
+
+# Carpeta que crea la app de Claude al abrir archivos
+Claude outputs/
+
+# Archivos que genera Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
