@@ -1,0 +1,6 @@
+# Dependencias de la app publicada (app.py).
+# No incluye torch ni transformers: el modelo corre en los servidores de Hugging Face (InferenceClient).
+gradio==6.30.0
+huggingface_hub==2.2.0
+pillow
+python-dotenv
