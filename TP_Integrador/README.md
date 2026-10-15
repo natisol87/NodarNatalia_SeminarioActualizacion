@@ -1,12 +1,15 @@
 # Lector de texto en imágenes · TP Integrador
 
-**Seminario de Actualización** · 2.º cuatrimestre 2026
+**Seminario de Actualización**
+2.º cuatrimestre 2026
 Tecnicatura Superior en Ciencia de Datos e IA · IFTS N.º 18
 
-**Alumna:** Natalia Nodar · 
+**Alumna:** Natalia Nodar 
 **Docente:** Cynthia M. Villagra 
 
 App web que **lee el texto de una imagen**, tanto impreso como escrito a mano (apuntes, tickets, folletos, documentos), y lo devuelve listo para copiar. Usa el modelo ya entrenado [`lightonai/LightOnOCR-2-1B`](https://huggingface.co/lightonai/LightOnOCR-2-1B) de Hugging Face.
+
+App publicada: https://nodarnatalia-seminarioactualizacion-1.onrender.com/?__theme=light
 
 ---
 
