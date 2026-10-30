@@ -1,0 +1,16 @@
+# Modelos generados al ejecutar el notebook
+modelos_exportados/
+
+# Entorno virtual
+.venv/
+venv/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/

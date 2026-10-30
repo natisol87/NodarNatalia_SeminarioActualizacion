@@ -35,3 +35,15 @@ La app se publicó en un servidor de verdad, para que funcione aunque la compu e
 - **Gradio en Render:** https://nodarnatalia-seminarioactualizacion.onrender.com/
 - **Streamlit en Streamlit Community Cloud:** https://nodarnataliaseminarioactualizacion-fktrpatjypghnbghj6zzy5.streamlit.app/
 
+### Clase 7 · TP integrador
+
+Una app web que **lee el texto de una imagen**, impreso o escrito a mano, y lo devuelve listo para copiar. Usa el modelo ya entrenado [`lightonai/LightOnOCR-2-1B`](https://huggingface.co/lightonai/LightOnOCR-2-1B) de Hugging Face a través de `InferenceClient`, así que la app no descarga los pesos y entra en el plan gratuito de Render.
+
+- **App publicada en Render:** https://nodarnatalia-seminarioactualizacion-1.onrender.com/?__theme=light
+- **Notebook de pruebas:** compara LightOnOCR con un segundo modelo (Qwen3-VL), `pipeline` vs. `InferenceClient`, tiempos y valor de retorno.
+- **Informe y presentación** del trabajo.
+
+### Clase 10 · Entrenamiento de modelos
+
+Notebook "El camino del entrenamiento" (regresión lineal en scikit-learn, PyTorch y Keras), con predicciones y la Actividad sobre el formato elegido .weights.h5.
+

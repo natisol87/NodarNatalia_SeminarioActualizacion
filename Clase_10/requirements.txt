@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+joblib
+torch
+keras
+h5py
+skops
+skl2onnx
+onnx
+onnxscript
+onnxruntime
+ipykernel
