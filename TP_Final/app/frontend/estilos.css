@@ -7,19 +7,28 @@
   font-display: swap;
 }
 
-/* Paleta: #F4A100 · #E8730C · #7A3E9D · #3E1F47 · #1A1423 */
+/* Paleta: #2D7A79 · #283C68 · #342453 · #3D1A3F · #37101F */
 :root {
-  --amarillo: #F4A100;
-  --naranja: #E8730C;
-  --violeta: #7A3E9D;
-  --violeta-oscuro: #3E1F47;
-  --fondo: #1A1423;
+  --verde-azulado: #2D7A79;
+  --azul: #283C68;
+  --violeta: #342453;
+  --ciruela: #3D1A3F;
+  --bordo: #37101F;
 
-  --tarjeta: rgba(62, 31, 71, 0.55);   /* violeta oscuro translúcido sobre el fondo */
-  --campo: #1A1423;
-  --texto: #F3EDF7;
-  --suave: #C9BBD3;
-  --borde: #7A3E9D;
+  /* Fondo: degradé que recorre la paleta, de azul a bordó */
+  --fondo-degrade: linear-gradient(160deg, #283C68 0%, #342453 40%, #3D1A3F 70%, #37101F 100%);
+  --fondo: #37101F;                       /* color sólido de respaldo */
+
+  --tarjeta: rgba(55, 16, 31, 0.6);       /* bordó translúcido: los bloques se despegan del fondo */
+  --campo: #37101F;
+  --texto: #F2EEF5;
+  --suave: #C7BFD3;
+  --borde: #2D7A79;
+
+  /* Acentos: el verde azulado de la paleta y una versión más clara para que se lea sobre lo oscuro */
+  --acento: #2D7A79;
+  --acento-claro: #7FD1CF;
+  --acento-hover: #379593;
 
   /* Colores del resultado (se mantienen) */
   --alto: #d6336c;
@@ -32,7 +41,10 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
   background: var(--fondo);
+  background-image: var(--fondo-degrade);
+  background-attachment: fixed;
   color: var(--texto);
   line-height: 1.5;
 }
@@ -45,7 +57,7 @@ main {
 
 .etiqueta {
   font-size: 0.8rem;
-  color: var(--amarillo);
+  color: var(--acento-claro);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 0;
@@ -57,7 +69,8 @@ h1 {
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   line-height: 1.1;
   margin: 0.4rem 0 0.6rem;
-  color: var(--naranja);
+  color: var(--acento-claro);
+  text-shadow: 3px 3px 0 var(--acento);   /* sombra en el verde azulado de la paleta */
 }
 
 .bajada { color: var(--suave); margin-top: 0; }
@@ -117,7 +130,7 @@ form, #resultado {
   font: inherit;
 }
 
-.ejemplos button:hover { border-color: var(--amarillo); color: var(--amarillo); }
+.ejemplos button:hover { border-color: var(--acento-claro); color: var(--acento-claro); }
 
 .campos {
   display: grid;
@@ -144,7 +157,7 @@ input {
   color-scheme: dark;          /* flechitas del input number en oscuro */
 }
 
-input:focus { outline: 2px solid var(--amarillo); outline-offset: 1px; }
+input:focus { outline: 2px solid var(--acento-claro); outline-offset: 1px; }
 
 #boton {
   margin-top: 1.5rem;
@@ -152,14 +165,14 @@ input:focus { outline: 2px solid var(--amarillo); outline-offset: 1px; }
   padding: 0.75rem;
   font: inherit;
   font-weight: 700;
-  color: var(--fondo);         /* texto oscuro sobre naranja: mejor contraste */
-  background: var(--naranja);
+  color: #FFFFFF;
+  background: var(--acento);
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
-#boton:hover { background: var(--amarillo); }
+#boton:hover { background: var(--acento-hover); }
 #boton:disabled { opacity: 0.6; cursor: wait; }
 
 .oculto { display: none; }
@@ -170,7 +183,7 @@ input:focus { outline: 2px solid var(--amarillo); outline-offset: 1px; }
 
 .barra {
   height: 12px;
-  background: var(--fondo);
+  background: var(--campo);
   border-radius: 999px;
   overflow: hidden;
   margin: 0.75rem 0 0.25rem;
@@ -184,7 +197,7 @@ input:focus { outline: 2px solid var(--amarillo); outline-offset: 1px; }
 #resultado ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 
 footer { margin-top: 2rem; font-size: 0.85rem; color: var(--suave); }
-footer a { color: var(--amarillo); }
+footer a { color: var(--acento-claro); }
 
 /* En pantallas angostas la imagen va arriba del formulario, con alto fijo */
 @media (max-width: 760px) {
