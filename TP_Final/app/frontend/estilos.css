@@ -1,11 +1,27 @@
+/* Fuente del título: Rubik Glitch (Google Fonts, licencia OFL), guardada en el proyecto */
+@font-face {
+  font-family: "Rubik Glitch";
+  src: url("fuentes/RubikGlitch-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Paleta: #F4A100 · #E8730C · #7A3E9D · #3E1F47 · #1A1423 */
 :root {
-  --fondo: #f5f6fa;
-  --tarjeta: #ffffff;
-  --texto: #1f2430;
-  --suave: #5f6676;
-  --borde: #d9dce5;
-  --primario: #3b5bdb;
-  --primario-oscuro: #2f4ac0;
+  --amarillo: #F4A100;
+  --naranja: #E8730C;
+  --violeta: #7A3E9D;
+  --violeta-oscuro: #3E1F47;
+  --fondo: #1A1423;
+
+  --tarjeta: rgba(62, 31, 71, 0.55);   /* violeta oscuro translúcido sobre el fondo */
+  --campo: #1A1423;
+  --texto: #F3EDF7;
+  --suave: #C9BBD3;
+  --borde: #7A3E9D;
+
+  /* Colores del resultado (se mantienen) */
   --alto: #d6336c;
   --bajo: #2b8a3e;
   --error: #c92a2a;
@@ -22,29 +38,63 @@ body {
 }
 
 main {
-  max-width: 720px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1.25rem 3rem;
 }
 
 .etiqueta {
   font-size: 0.8rem;
-  color: var(--suave);
+  color: var(--amarillo);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 0;
 }
 
-h1 { margin: 0.25rem 0 0.5rem; font-size: 2rem; }
+h1 {
+  font-family: "Rubik Glitch", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  margin: 0.4rem 0 0.6rem;
+  color: var(--naranja);
+}
 
 .bajada { color: var(--suave); margin-top: 0; }
+
+/* Formulario a la izquierda, imagen a la derecha, ambos con el mismo alto */
+.contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
 
 form, #resultado {
   background: var(--tarjeta);
   border: 1px solid var(--borde);
   border-radius: 12px;
   padding: 1.5rem;
-  margin-top: 1.5rem;
+}
+
+#resultado { margin-top: 1.5rem; }
+
+.imagen {
+  margin: 0;
+  position: relative;          /* la imagen se ajusta al alto del formulario */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+}
+
+.imagen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% center;
 }
 
 .ejemplos {
@@ -64,13 +114,14 @@ form, #resultado {
   padding: 0.3rem 0.8rem;
   cursor: pointer;
   color: var(--texto);
+  font: inherit;
 }
 
-.ejemplos button:hover { border-color: var(--primario); color: var(--primario); }
+.ejemplos button:hover { border-color: var(--amarillo); color: var(--amarillo); }
 
 .campos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
@@ -85,27 +136,30 @@ label {
 input {
   font: inherit;
   font-weight: 400;
+  color: var(--texto);
+  background: var(--campo);
   padding: 0.55rem 0.7rem;
   border: 1px solid var(--borde);
   border-radius: 8px;
+  color-scheme: dark;          /* flechitas del input number en oscuro */
 }
 
-input:focus { outline: 2px solid var(--primario); outline-offset: 1px; }
+input:focus { outline: 2px solid var(--amarillo); outline-offset: 1px; }
 
 #boton {
   margin-top: 1.5rem;
   width: 100%;
   padding: 0.75rem;
   font: inherit;
-  font-weight: 600;
-  color: white;
-  background: var(--primario);
+  font-weight: 700;
+  color: var(--fondo);         /* texto oscuro sobre naranja: mejor contraste */
+  background: var(--naranja);
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
-#boton:hover { background: var(--primario-oscuro); }
+#boton:hover { background: var(--amarillo); }
 #boton:disabled { opacity: 0.6; cursor: wait; }
 
 .oculto { display: none; }
@@ -130,4 +184,10 @@ input:focus { outline: 2px solid var(--primario); outline-offset: 1px; }
 #resultado ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 
 footer { margin-top: 2rem; font-size: 0.85rem; color: var(--suave); }
-footer a { color: var(--primario); }
+footer a { color: var(--amarillo); }
+
+/* En pantallas angostas la imagen va arriba del formulario, con alto fijo */
+@media (max-width: 760px) {
+  .contenido { grid-template-columns: 1fr; }
+  .imagen { order: -1; height: 200px; }
+}
