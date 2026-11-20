@@ -1,0 +1,16 @@
+# Configuración para Vercel (la carpeta app/ es la raíz del proyecto en Vercel).
+# Las dependencias son las mismas que backend/requirements.txt.
+[project]
+name = "tp-final-adiccion-celular"
+version = "1.0.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "pandas>=2.2",
+    "joblib>=1.4",
+    "scikit-learn==1.9.1",
+]
+
+[tool.vercel]
+# Dónde está la instancia de FastAPI: archivo backend/main.py, variable app
+entrypoint = "backend.main:app"

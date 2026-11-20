@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Adicción al celular? · TP Final Integrador</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="etiqueta">TP Final Integrador · Seminario de Actualización · IFTS N.º 18</p>
+      <h1>¿Adicción al celular?</h1>
+      <p class="bajada">Completá los hábitos de uso de un/a adolescente y el modelo estima si tiene un nivel de adicción alto.</p>
+    </header>
+
+    <form id="formulario" novalidate>
+      <div class="ejemplos">
+        <span>Cargar ejemplo:</span>
+        <button type="button" data-ejemplo="bajo">Uso bajo</button>
+        <button type="button" data-ejemplo="limite">En el límite</button>
+        <button type="button" data-ejemplo="alto">Uso alto</button>
+      </div>
+
+      <div class="campos">
+        <label>Horas de uso por día
+          <input type="number" name="horas_uso_diario" step="0.1" min="0" max="24" value="5.5" required>
+        </label>
+        <label>Horas de sueño por noche
+          <input type="number" name="horas_sueno" step="0.1" min="0" max="24" value="6.5" required>
+        </label>
+        <label>Horas en redes sociales
+          <input type="number" name="horas_redes" step="0.1" min="0" max="24" value="2.5" required>
+        </label>
+        <label>Horas en juegos
+          <input type="number" name="horas_juegos" step="0.1" min="0" max="24" value="1.5" required>
+        </label>
+        <label>Veces que mira el celular por día
+          <input type="number" name="chequeos_por_dia" step="1" min="0" max="1000" value="90" required>
+        </label>
+        <label>Apps distintas usadas por día
+          <input type="number" name="apps_por_dia" step="1" min="0" max="200" value="13" required>
+        </label>
+      </div>
+
+      <button type="submit" id="boton">Predecir</button>
+    </form>
+
+    <section id="resultado" class="oculto" aria-live="polite"></section>
+
+    <footer>
+      <p>Modelo: regresión logística (scikit-learn) entrenada con el
+        <a href="https://www.kaggle.com/datasets/sumedh1507/teen-phone-addiction" target="_blank" rel="noopener">Teen Smartphone Usage and Addiction Impact Dataset</a>.
+        Los datos son sintéticos: el resultado es una demostración, no un diagnóstico.</p>
+      <p><a href="/docs" target="_blank" rel="noopener">Documentación de la API (/docs)</a> · <a href="/health" target="_blank" rel="noopener">Estado (/health)</a></p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
