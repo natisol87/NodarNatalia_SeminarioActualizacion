@@ -47,3 +47,16 @@ Una app web que **lee el texto de una imagen**, impreso o escrito a mano, y lo d
 
 Notebook "El camino del entrenamiento" (regresión lineal en scikit-learn, PyTorch y Keras), con predicciones y la Actividad sobre el formato elegido .weights.h5.
 
+### TP Final Integrador
+
+Una app web que estima si un/a adolescente tiene un nivel de adicción alto al celular, y con qué probabilidad.
+
+- **Modelo:** regresión logística entrenada con scikit-learn sobre el [Teen Smartphone Usage and Addiction Impact Dataset](https://www.kaggle.com/datasets/sumedh1507/teen-phone-addiction) de Kaggle (F1 ≈ 0,99), guardada con `joblib`. En el notebook se muestra que el dataset es sintético: el puntaje sale de una fórmula, así que el modelo sirve como demostración y no como diagnóstico.
+- **API con FastAPI:** `GET /health` para comprobar que está viva y `POST /predecir`, que valida la entrada con Pydantic (responde 422 si un dato falta o está mal) y devuelve la predicción con su probabilidad.
+- **Frontend:** página propia en HTML, CSS y JavaScript que manda el formulario a la API con `fetch` y avisa si hubo un error.
+- **Deploy:** frontend y API publicados juntos en Vercel, en el mismo dominio, así que no hizo falta configurar CORS.
+
+- **App publicada:** https://nodar-natalia-seminario-actualizaci.vercel.app/
+- **Documentación de la API:** https://nodar-natalia-seminario-actualizaci.vercel.app/docs
+- **Notebook de entrenamiento:** [TP_Final/notebook/entrenamiento.ipynb](TP_Final/notebook/entrenamiento.ipynb)
+
