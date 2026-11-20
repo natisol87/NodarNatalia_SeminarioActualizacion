@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¿Adicción al celular? · TP Final Integrador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -14,6 +17,7 @@
       <p class="bajada">Completá los hábitos de uso de un/a adolescente y el modelo estima si tiene un nivel de adicción alto.</p>
     </header>
 
+    <div class="contenido">
     <form id="formulario" novalidate>
       <div class="ejemplos">
         <span>Cargar ejemplo:</span>
@@ -45,6 +49,12 @@
 
       <button type="submit" id="boton">Predecir</button>
     </form>
+
+    <!-- La imagen ocupa la columna derecha y toma el mismo alto que el formulario -->
+    <figure class="imagen">
+      <img src="img/adolescentes.jpg" alt="Adolescentes sentados en fila, cada uno mirando su celular">
+    </figure>
+    </div>
 
     <section id="resultado" class="oculto" aria-live="polite"></section>
 
