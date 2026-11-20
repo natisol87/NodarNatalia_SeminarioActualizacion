@@ -1,0 +1,6 @@
+fastapi>=0.115
+uvicorn>=0.30
+pandas>=2.2
+joblib>=1.4
+# Tiene que ser la MISMA versión con la que se entrenó el modelo (ver notebook)
+scikit-learn==1.9.1
